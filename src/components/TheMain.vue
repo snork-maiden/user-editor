@@ -1,6 +1,6 @@
 <script setup>
 import { useUsersStore } from '../stores/users';
-import TheAddButton from './TheAddButton.vue';
+import TheAddUser from './TheAddUser.vue';
 import UsersList from './UsersList.vue';
 // import { computed } from "vue";
 
@@ -10,7 +10,7 @@ const isEmpty = () => usersStore.isEmpty;
 </script>
 
 <template>
-  <TheAddButton />
+  <TheAddUser />
 
   <UsersList v-if="isEmpty" :users-data="usersStore.users" />
 </template>

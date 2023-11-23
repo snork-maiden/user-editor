@@ -33,7 +33,7 @@ let name = computed(() => {
 <template>
   <li class="user">
     <h2 class="user__name">{{ name }}</h2>
-    <div class="user__birthday">{{ userData.birthday }}</div>
+    <div class="user__birthday">{{ userData.birthDate }}</div>
     <h3 class="contacts">Contacts:</h3>
 
     <ul class="contacts__list">
@@ -45,7 +45,7 @@ let name = computed(() => {
       </li>
     </ul>
 
-    <EditUser />
+    <EditUser :user="userData"/>
     <DeleteUser :id="userData.id"/>
   </li>
 </template>

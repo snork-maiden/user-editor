@@ -10,7 +10,7 @@ export const useUsersStore = defineStore('users', () => {
       lastName: 'Filatov',
       phone: '+78094433435',
       email: 'aaa@a.com',
-      birthday: '11.06.1886',
+      birthDate: '11.06.1886',
       id: 1
     },
     {
@@ -19,7 +19,7 @@ export const useUsersStore = defineStore('users', () => {
       lastName: 'Filatov',
       phone: '+78094433435',
       email: 'aaa@a.com',
-      birthday: '11.06.1886',
+      birthDate: '11.06.1886',
       id: 2
     },
     {
@@ -28,7 +28,7 @@ export const useUsersStore = defineStore('users', () => {
       lastName: 'Filatov',
       phone: '+78094433435',
       email: 'aaa@a.com',
-      birthday: '11.06.1886',
+      birthDate: '11.06.1886',
       id: 3
     },
   ])
