@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import EditUser from './EditUser.vue'
-import DeleteUser from './DeleteUser.vue';
+import DeleteUser from './DeleteUser.vue'
 
 const props = defineProps({
   userData: {
@@ -18,22 +18,18 @@ let name = computed(() => {
   return [user.firstName, user.lastName].join(' ')
 })
 
-//  class User {
-//   constructor(firstName, middleName, lastName, email, phone, birthDate) {
-//     this.firstName = firstName
-//     this.middleName = middleName
-//     this.lastName = lastName
-//     this.email = email
-//     this.phone = phone
-//     this.birthDate = birthDate
-//   }
-// }
+function formatDate(dateString) {
+  let date = new Date(dateString)
+
+  const options = { day: 'numeric', month: 'long', year: 'numeric' }
+  return date.toLocaleDateString('ru-RU', options)
+}
 </script>
 
 <template>
   <li class="user">
     <h2 class="user__name">{{ name }}</h2>
-    <div class="user__birthday">{{ userData.birthDate }}</div>
+    <div class="user__birthday">{{ 'Дата рождения: ' + formatDate(userData.birthDate) }}</div>
     <h3 class="contacts">Contacts:</h3>
 
     <ul class="contacts__list">
@@ -45,20 +41,7 @@ let name = computed(() => {
       </li>
     </ul>
 
-    <EditUser :user="userData"/>
-    <DeleteUser :id="userData.id"/>
+    <EditUser :user="userData" />
+    <DeleteUser :id="userData.id" />
   </li>
 </template>
-
-<!-- const props = defineProps({
-    status: {
-      type: String,
-      required: true,
-  
-      validator: (value) => {
-        return ['syncing', 'synced', 'version-conflict', 'error'].includes(
-          value
-        )
-      }
-    }
-  }) -->
