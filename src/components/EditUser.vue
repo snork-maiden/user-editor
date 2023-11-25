@@ -18,6 +18,6 @@ let isOpen = ref(false)
     <IconEdit />
   </button>
   <ModalWindow v-if="isOpen" @close="isOpen = false" >
-    <UserForm :user="user"/>
+    <UserForm :user="user" @close="isOpen = false"/>
   </ModalWindow>
 </template>

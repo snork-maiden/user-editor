@@ -9,6 +9,6 @@ let isOpen = ref(false)
 <template>
   <button type="button" @click="isOpen = true">+</button>
   <ModalWindow v-if="isOpen" @close="isOpen = false">
-    <UserForm />
+    <UserForm @close="isOpen = false"/>
   </ModalWindow>
 </template>
