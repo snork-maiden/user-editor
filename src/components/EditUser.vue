@@ -1,5 +1,6 @@
 <script setup>
 import ModalWindow from './ModalWindow.vue';
+import MyButton from './MyButton.vue';
 import UserForm from './UserForm.vue';
 import IconEdit from './icons/IconEdit.vue'
 import { ref } from 'vue'
@@ -14,9 +15,9 @@ let isOpen = ref(false)
 </script>
 
 <template>
-  <button type="button" @click="isOpen = true">
+  <MyButton @click="isOpen = true">
     <IconEdit />
-  </button>
+  </MyButton>
   <ModalWindow v-if="isOpen" @close="isOpen = false" >
     <UserForm :user="user" @close="isOpen = false"/>
   </ModalWindow>

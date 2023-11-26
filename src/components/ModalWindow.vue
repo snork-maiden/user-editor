@@ -1,4 +1,7 @@
 <script setup>
+import MyButton from './MyButton.vue'
+import IconClose from './icons/IconClose.vue'
+
 defineEmits({
   close: null
 })
@@ -8,7 +11,7 @@ defineEmits({
   <Teleport to="body">
     <div class="wrapper" @click.self="$emit('close')">
       <div class="modal">
-        <button type="button" @click="$emit('close')">Close</button>
+        <MyButton @click="$emit('close')" class="close-button"><IconClose /></MyButton>
         <slot></slot>
       </div>
     </div>
@@ -35,8 +38,11 @@ defineEmits({
   min-height: 30vh;
   background-color: #fff;
   display: grid;
-  justify-content: center;
   align-items: center;
   padding: 1em;
+}
+
+.close-button {
+  justify-self: end;
 }
 </style>

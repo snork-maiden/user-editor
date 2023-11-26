@@ -1,9 +1,9 @@
 <template>
   <!--Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools-->
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-   width="20">
+   width="25">
     <title>Edit user</title>
-    <path
+    <path class="edit"
       stroke="#000"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -12,3 +12,8 @@
     />
   </svg>
 </template>
+<style scoped lang="scss">
+.edit {
+    stroke: var(--color-text);
+}
+</style>

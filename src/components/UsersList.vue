@@ -13,3 +13,13 @@ defineProps({
     <UsersListItem v-for="user of usersData" :key="user.id" :userData="user"/>
   </ul>
 </template>
+<style scoped lang="scss">
+.users {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    list-style: none;
+    gap: min(6vw, 5em);
+    max-width: 1000px;
+}
+</style>
+

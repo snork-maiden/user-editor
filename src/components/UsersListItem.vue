@@ -12,10 +12,7 @@ const props = defineProps({
 
 let name = computed(() => {
   const user = props.userData
-  if (user.middleName) {
-    return [user.firstName, user.middleName, user.lastName].join(' ')
-  }
-  return [user.firstName, user.lastName].join(' ')
+  return [user.lastName, user.firstName, user?.middleName || ''].join(' ')
 })
 
 function formatDate(dateString) {
@@ -30,7 +27,8 @@ function formatDate(dateString) {
   <li class="user">
     <h2 class="user__name">{{ name }}</h2>
     <div class="user__birthday">{{ 'Дата рождения: ' + formatDate(userData.birthDate) }}</div>
-    <h3 class="contacts">Contacts:</h3>
+
+    <h3 class="contacts">Контакты:</h3>
 
     <ul class="contacts__list">
       <li class="contacts__item">
@@ -40,8 +38,19 @@ function formatDate(dateString) {
         <a :href="'tel:' + userData.phone">{{ userData.phone }}</a>
       </li>
     </ul>
-
-    <EditUser :user="userData" />
-    <DeleteUser :id="userData.id" />
+    <div class="buttons">
+      <EditUser :user="userData" />
+      <DeleteUser :id="userData.id" />
+    </div>
   </li>
 </template>
+<style scoped lang="scss">
+.user {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.buttons {
+  align-self: end;
+}
+</style>

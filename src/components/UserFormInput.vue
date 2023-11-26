@@ -56,13 +56,30 @@ watch(inputValue, () => {
 </script>
 
 <template>
-  <label :for="id" class="label"><slot></slot></label>
-  <input
-    :type="type"
-    :name="id"
-    :id="id"
-    class="input"
-    :required="required"
-    v-model.trim="inputValue"
-  />
+  <div class="wrapper">
+    <label :for="id" class="label" :class="{required}"><slot></slot></label>
+    <input
+      :type="type"
+      :name="id"
+      :id="id"
+      class="input"
+      :required="required"
+      v-model.trim="inputValue"
+    />
+  </div>
 </template>
+<style scoped lang="scss">
+.wrapper {
+    display: grid;
+    min-width: 230px;
+}
+.label {
+  font-weight: 500;
+}
+
+.required::after {
+ content: ' *';
+ color: red;
+ font-weight: bold;
+}
+</style>

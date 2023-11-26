@@ -37,7 +37,7 @@ function submitForm() {
 </script>
 
 <template>
-  <form @submit.prevent="submitForm($event)" autocomplete="on">
+  <form @submit.prevent="submitForm($event)" autocomplete="on" class="form">
     <UserFormInput
       id="lastName"
       required
@@ -85,6 +85,30 @@ function submitForm() {
       @change="(value) => (formData.birthDate = value)"
       >Дата рождения</UserFormInput
     >
-    <button type="submit">Отправить</button>
+    <button type="submit" class="submit-button">Отправить</button>
   </form>
 </template>
+<style scoped lang="scss">
+.form {
+  align-self: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 2em;
+  padding-top: 1em;
+  // grid-template-columns: auto 1fr;
+}
+
+.submit-button {
+  margin-top: 2em;
+  background-color: var(--color-button);
+  font: inherit;
+  color: inherit;
+  border: 0;
+  padding: 0.8em 1.5em;
+  justify-self: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+</style>
