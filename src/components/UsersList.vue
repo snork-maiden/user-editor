@@ -18,7 +18,7 @@ defineProps({
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     list-style: none;
-    gap: min(6vw, 5em);
+    gap: min(9vw, 5em);
     max-width: 1000px;
 }
 </style>

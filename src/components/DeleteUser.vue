@@ -1,7 +1,7 @@
 <script setup>
 import { useUsersStore } from '../stores/users'
 import ModalWindow from './ModalWindow.vue'
-import MyButton from './MyButton.vue';
+import MyButton from './MyButton.vue'
 import IconDelete from './icons/IconDelete.vue'
 import { ref } from 'vue'
 
@@ -28,9 +28,11 @@ function deleteUser() {
   </MyButton>
 
   <ModalWindow v-if="isOpen" @close="isOpen = false">
-    Are you sure that you want to delete this user?
-    <button type="button" @click="deleteUser">✅</button>
-    <button type="button" @click="isOpen = false">❌</button>
+    <p class="confirm">Вы уверены, что хотите удалить этого пользователя?</p>
+    <div class="buttons">
+      <MyButton @click="deleteUser">✅</MyButton>
+      <MyButton @click="isOpen = false">❌</MyButton>
+    </div>
   </ModalWindow>
 </template>
 
@@ -38,5 +40,19 @@ function deleteUser() {
 .delete {
   background: none;
   border: 0cap;
+}
+.confirm {
+  justify-self: center;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  justify-self: center;
+  font-size: 1.4em;
+  margin-bottom: 1em;
 }
 </style>

@@ -51,6 +51,7 @@ function formatDate(dateString) {
   flex-direction: column;
 }
 .buttons {
+  margin-top: auto;
   align-self: end;
 }
 </style>

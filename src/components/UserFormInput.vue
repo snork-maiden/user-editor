@@ -72,9 +72,17 @@ watch(inputValue, () => {
 .wrapper {
     display: grid;
     min-width: 230px;
+    
+    @media screen and (min-width: 700px){
+      grid-template-columns: 180px 1fr;
+    }
 }
 .label {
   font-weight: 500;
+}
+
+.input {
+  border: 1px solid var(--color-text);
 }
 
 .required::after {
